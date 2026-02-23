@@ -174,16 +174,28 @@ app.post('/api/users', async (req, res) => {
     try {
         const { nombre_completo, cedula, whatsapp, fecha_nacimiento, direccion, parroquia_id, access_point_id, security_question_id, security_answer } = req.body;
         if (!nombre_completo || !cedula) return res.status(400).json({ error: 'Nombre y cédula requeridos' });
-        const result = await execute(
-            `INSERT IGNORE INTO captive_users (nombre_completo, cedula, whatsapp, fecha_nacimiento, direccion, parroquia_id, access_point_id, security_question_id, security_answer) VALUES (?,?,?,?,?,?,?,?,?)`,
-            [nombre_completo, cedula, whatsapp || null, fecha_nacimiento || null, direccion || null, parroquia_id || null, access_point_id || null, security_question_id || null, security_answer || null]
-        );
-        if (result.affectedRows === 0) return res.status(409).json({ error: 'Esta cédula ya está registrada' });
-        if (access_point_id) {
-            await execute('UPDATE access_points SET connected_users = connected_users + 1 WHERE id = ?', [access_point_id]);
+
+        try {
+            const result = await execute(
+                `INSERT INTO captive_users (nombre_completo, cedula, whatsapp, fecha_nacimiento, direccion, parroquia_id, access_point_id, security_question_id, security_answer) VALUES (?,?,?,?,?,?,?,?,?)`,
+                [nombre_completo, cedula, whatsapp || null, fecha_nacimiento || null, direccion || null, parroquia_id || null, access_point_id || null, security_question_id || null, security_answer || null]
+            );
+
+            if (access_point_id) {
+                await execute('UPDATE access_points SET connected_users = connected_users + 1 WHERE id = ?', [access_point_id]);
+            }
+            res.json({ ok: true, id: result.insertId });
+        } catch (dbErr: any) {
+            // Handle duplicate cedula
+            if (dbErr.code === 'ER_DUP_ENTRY') {
+                return res.status(409).json({ error: 'Esta cédula ya está registrada' });
+            }
+            throw dbErr;
         }
-        res.json({ ok: true, id: result.insertId });
-    } catch (e: any) { res.status(500).json({ error: 'Error al registrar usuario' }); }
+    } catch (e: any) {
+        console.error('L', e);
+        res.status(500).json({ error: 'Error al registrar usuario' });
+    }
 });
 
 app.get('/api/users', authMiddleware, async (req: any, res) => {
