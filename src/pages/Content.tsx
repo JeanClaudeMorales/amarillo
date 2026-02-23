@@ -184,7 +184,7 @@ export default function Content() {
                   <div className="w-12 h-12 bg-[#FDD041]/20 rounded-full flex items-center justify-center mx-auto">
                     <span className="material-symbols-outlined text-[#FDD041] text-2xl">wifi</span>
                   </div>
-                  <p className="font-bold text-sm">{editConfig.network_name || 'Venezuela WiFi'}</p>
+                  <p className="font-bold text-sm">{editConfig.network_name || 'Mérida te conecta'}</p>
                   <h3 className="font-bold text-base leading-tight">{editConfig.consent_title || 'Consentimiento de Datos'}</h3>
                   <p className="text-xs text-[#1e1e1e]/70 leading-snug">{editConfig.consent_body?.slice(0, 120) || '...'}{(editConfig.consent_body?.length || 0) > 120 ? '...' : ''}</p>
                 </div>

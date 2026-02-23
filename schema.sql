@@ -161,7 +161,7 @@ INSERT IGNORE INTO portal_config (`key`, value) VALUES
   ('consent_body',             'Al conectarse a esta red WiFi pública, usted acepta nuestros términos de privacidad y el uso de sus datos para fines estadísticos de conectividad pública, conforme a la legislación venezolana vigente.'),
   ('welcome_message',          'Ingresa tus datos para navegar gratis en la red pública.'),
   ('session_duration_minutes', '120'),
-  ('network_name',             'Venezuela WiFi');
+  ('network_name',             'Mérida te conecta');
 
 -- Preguntas predeterminadas
 INSERT IGNORE INTO questions (texto, tipo, respuesta_correcta) VALUES
