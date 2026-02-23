@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lista de Usuarios Mérida Conecta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "neutral-dark": "#1E1E1E",
+                        "neutral-divider": "#E6E6E6",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-neutral-dark dark:text-slate-200 min-h-screen flex flex-col">
+<!-- Top Navigation Bar (iOS Style) -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 ios-blur border-b border-neutral-divider dark:border-slate-800">
+<div class="flex items-center justify-between px-4 h-11">
+<button class="text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[22px]">chevron_left</span>
+<span class="text-[17px]">Panel</span>
+</button>
+<div class="flex items-center gap-4">
+<button class="text-primary">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</button>
+</div>
+</div>
+<div class="px-4 pb-2 pt-1">
+<h1 class="text-3xl font-bold tracking-tight text-neutral-dark dark:text-white">Usuarios</h1>
+</div>
+</header>
+<!-- Search and Filters -->
+<div class="px-4 py-3 bg-white dark:bg-background-dark sticky top-[88px] z-40">
+<div class="flex gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[20px]">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl py-2.5 pl-10 pr-4 text-[17px] focus:ring-2 focus:ring-primary/20 placeholder:text-slate-500" placeholder="Buscar por nombre o cédula..." type="text"/>
+</div>
+<button class="bg-slate-100 dark:bg-slate-800 p-2.5 rounded-xl text-neutral-dark dark:text-white">
+<span class="material-symbols-outlined text-[24px]">filter_list</span>
+</button>
+</div>
+<!-- Quick Parish Pills -->
+<div class="flex gap-2 mt-4 overflow-x-auto pb-1 no-scrollbar">
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-primary text-white text-sm font-medium">Todas</button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-medium border border-neutral-divider dark:border-slate-700">Sagrario</button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-medium border border-neutral-divider dark:border-slate-700">Milla</button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-medium border border-neutral-divider dark:border-slate-700">Osuna Rdgz</button>
+</div>
+</div>
+<!-- User List -->
+<main class="flex-1 bg-white dark:bg-background-dark">
+<div class="divide-y divide-neutral-divider dark:divide-slate-800">
+<!-- User Entry 1 -->
+<div class="flex items-center gap-4 px-4 py-4 active:bg-slate-50 dark:active:bg-slate-900 transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 font-bold text-lg">
+                    JP
+                </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="text-[17px] font-semibold text-neutral-dark dark:text-white truncate">Juan Pérez</h3>
+<span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full dark:bg-green-900/30 dark:text-green-400">En línea</span>
+</div>
+<div class="flex flex-col text-[14px] text-slate-500 dark:text-slate-400 gap-0.5">
+<p>V-12.345.678 • +58 412-1234567</p>
+<p class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                            Parroquia: Sagrario
+                        </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600">chevron_right</span>
+</div>
+<!-- User Entry 2 -->
+<div class="flex items-center gap-4 px-4 py-4 active:bg-slate-50 dark:active:bg-slate-900 transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 font-bold text-lg">
+                    MG
+                </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="text-[17px] font-semibold text-neutral-dark dark:text-white truncate">María González</h3>
+</div>
+<div class="flex flex-col text-[14px] text-slate-500 dark:text-slate-400 gap-0.5">
+<p>V-15.987.654 • +58 414-7654321</p>
+<p class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                            Parroquia: Milla
+                        </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600">chevron_right</span>
+</div>
+<!-- User Entry 3 -->
+<div class="flex items-center gap-4 px-4 py-4 active:bg-slate-50 dark:active:bg-slate-900 transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 font-bold text-lg">
+                    CR
+                </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="text-[17px] font-semibold text-neutral-dark dark:text-white truncate">Carlos Rodríguez</h3>
+<span class="text-xs text-slate-400">Hace 2h</span>
+</div>
+<div class="flex flex-col text-[14px] text-slate-500 dark:text-slate-400 gap-0.5">
+<p>V-18.222.333 • +58 424-9876543</p>
+<p class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                            Parroquia: Osuna Rodríguez
+                        </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600">chevron_right</span>
+</div>
+<!-- User Entry 4 -->
+<div class="flex items-center gap-4 px-4 py-4 active:bg-slate-50 dark:active:bg-slate-900 transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 font-bold text-lg">
+                    AL
+                </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="text-[17px] font-semibold text-neutral-dark dark:text-white truncate">Ana López</h3>
+</div>
+<div class="flex flex-col text-[14px] text-slate-500 dark:text-slate-400 gap-0.5">
+<p>V-20.111.444 • +58 416-5554433</p>
+<p class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                            Parroquia: Sagrario
+                        </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600">chevron_right</span>
+</div>
+<!-- User Entry 5 -->
+<div class="flex items-center gap-4 px-4 py-4 active:bg-slate-50 dark:active:bg-slate-900 transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 font-bold text-lg">
+                    RM
+                </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="text-[17px] font-semibold text-neutral-dark dark:text-white truncate">Ricardo Mendoza</h3>
+</div>
+<div class="flex flex-col text-[14px] text-slate-500 dark:text-slate-400 gap-0.5">
+<p>V-25.000.999 • +58 412-0001122</p>
+<p class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                            Parroquia: Milla
+                        </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600">chevron_right</span>
+</div>
+</div>
+<div class="p-8 text-center text-slate-400 text-sm">
+            Mostrando 5 de 1,248 usuarios registrados
+        </div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="sticky bottom-0 bg-white/90 dark:bg-background-dark/90 ios-blur border-t border-neutral-divider dark:border-slate-800 pb-safe-area">
+<div class="flex justify-around items-center h-16">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[28px] font-fill">group</span>
+<span class="text-[10px] font-medium">Usuarios</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-[28px]">bar_chart</span>
+<span class="text-[10px] font-medium">Estadísticas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-[28px]">settings</span>
+<span class="text-[10px] font-medium">Ajustes</span>
+</a>
+</div>
+</nav>
+<!-- Map Background Image (Hidden/Placeholder logic for UI) -->
+<div class="hidden">
+<img data-alt="Satellite map showing Mérida city streets and parishes" data-location="Mérida, Venezuela" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxtWiI1geq_VIGkzYc5i9uAElu9KqePFth54Y0nIYq6DvccKUXAnh-QImmvhi4--chw3DySr_Ysw109KPH4LkYHzEmEi8vdZBGnHRv926vHbE6Y6q5168AaQ1IZlCb8fdEq6cq6RiaEHxN_BQaJYbPfHiw-vjswjlDUU5vA7G2v3iIQZmTOVvHHiBD5X5mcpXMR96RqPVWzJjvZFwUJ4VX3x8NK9jnmJSC9vnd23Y0s-CUZ-e6-JFcu9zzL1k78OxG43Xz7n5RIDCy"/>
+</div>
+</body></html>

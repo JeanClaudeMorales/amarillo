@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panel de Control Mérida Conecta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fdd13f",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#231e0f",
+                        "neutral-dark": "#1e1e1e",
+                        "neutral-gray": "#717171",
+                        "border-light": "#e9e3cd"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-tab { color: #1e1e1e; border-bottom: 3px solid #fdd13f; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light text-neutral-dark min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-white/80 backdrop-blur-md border-b border-border-light px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary rounded-full flex items-center justify-center text-neutral-dark">
+<span class="material-symbols-outlined">wifi_tethering</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-tight">Mérida Conecta</h1>
+<p class="text-[10px] uppercase tracking-wider text-neutral-gray font-semibold">Admin Panel</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-neutral-dark hover:bg-primary/10 rounded-full relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<div class="size-10 rounded-full border border-border-light overflow-hidden bg-white" data-alt="User profile avatar placeholder">
+<img alt="Admin" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1lF5oMH7_z8L4egsFH55KhaUQ9ZRsUvd0rcEX_SeKx54PwZCRRK5dnBk7yqdIxYzZzKXhsAoFm658X1lRCFAz7H038U6ZEPcHYjLXoO3HRYLGZWT6erSZKbM0PU6lnuXkDt3EPlnHIl9XI-dPk06w_oJly-f86ds5VLAvl-4iDh1NVVg6m7IYuGrpLf5s6dV3yhkmdqZ7RHjJMhbQkpf-fdKNtYqTW7PbXsXbV62zWK6KZUVdjHIUxuxijiDguqEplvVYZRpSRwgk"/>
+</div>
+</div>
+</header>
+<main class="flex-1 pb-24">
+<!-- Overview Stats -->
+<section class="p-4">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold">Dashboard</h2>
+<span class="text-xs font-medium text-neutral-gray bg-white px-2 py-1 rounded border border-border-light">Real-time</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white p-4 rounded-xl border border-border-light shadow-sm">
+<p class="text-sm text-neutral-gray mb-1">Total Active</p>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold">1,284</span>
+<span class="text-green-600 text-xs font-bold mb-1 flex items-center"><span class="material-symbols-outlined text-[14px]">arrow_upward</span>12%</span>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-border-light shadow-sm">
+<p class="text-sm text-neutral-gray mb-1">Avg. Uptime</p>
+<div class="flex items-end gap-2">
+<span class="text-2xl font-bold">99.8%</span>
+<span class="text-primary text-xs font-bold mb-1">Stable</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Parishes Tabs -->
+<section class="mt-2">
+<div class="flex overflow-x-auto border-b border-border-light px-4 no-scrollbar gap-6">
+<button class="pb-3 text-sm font-bold active-tab whitespace-nowrap">Overview</button>
+<button class="pb-3 text-sm font-medium text-neutral-gray whitespace-nowrap">Sagrario</button>
+<button class="pb-3 text-sm font-medium text-neutral-gray whitespace-nowrap">El Llano</button>
+<button class="pb-3 text-sm font-medium text-neutral-gray whitespace-nowrap">Arias</button>
+<button class="pb-3 text-sm font-medium text-neutral-gray whitespace-nowrap">Milla</button>
+</div>
+</section>
+<!-- Connectivity Section -->
+<section class="p-4">
+<div class="bg-white rounded-xl border border-border-light overflow-hidden shadow-sm">
+<div class="p-4 border-b border-border-light flex justify-between items-center">
+<h3 class="font-bold">Active Sectors</h3>
+<span class="text-xs text-primary font-bold">See Map</span>
+</div>
+<div class="divide-y divide-border-light">
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+<div>
+<p class="font-semibold text-sm">Plaza Bolívar</p>
+<p class="text-xs text-neutral-gray">242 connections</p>
+</div>
+</div>
+<button class="text-neutral-dark"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+<div>
+<p class="font-semibold text-sm">Parque Las Heroínas</p>
+<p class="text-xs text-neutral-gray">189 connections</p>
+</div>
+</div>
+<button class="text-neutral-dark"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-500">error</span>
+<div>
+<p class="font-semibold text-sm">Mercado Principal</p>
+<p class="text-xs text-neutral-gray text-amber-600 font-medium">Intermittent Signal</p>
+</div>
+</div>
+<button class="text-neutral-dark"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Pop-up Configuration -->
+<section class="p-4">
+<h3 class="text-lg font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-neutral-dark">campaign</span>
+                Pop-up &amp; Content
+            </h3>
+<div class="bg-white p-4 rounded-xl border border-border-light shadow-sm">
+<label class="block text-xs font-bold text-neutral-gray uppercase mb-2 tracking-wide">Data Consent Message</label>
+<textarea class="w-full border-border-light rounded-lg text-sm p-3 focus:ring-primary focus:border-primary h-24 mb-3" placeholder="Enter the terms of service message for the login portal...">Al conectarse a Mérida Conecta, usted acepta nuestros términos de privacidad y el uso de sus datos para fines estadísticos de conectividad pública.</textarea>
+<button class="w-full bg-primary text-neutral-dark font-bold py-3 rounded-lg flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                    Update Portal Text
+                </button>
+</div>
+</section>
+<!-- Security Questions CRUD -->
+<section class="p-4">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined">security</span>
+                    Security Questions
+                </h3>
+<button class="bg-neutral-dark text-white p-1 rounded-lg">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="space-y-3">
+<div class="bg-white p-4 rounded-xl border border-border-light flex items-start gap-4 shadow-sm">
+<div class="bg-primary/20 text-neutral-dark size-8 rounded-lg flex items-center justify-center shrink-0">
+<span class="font-bold text-xs">Q1</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold">¿Cuál es el nombre de su primera mascota?</p>
+<div class="flex gap-4 mt-2">
+<button class="text-xs font-bold text-neutral-gray flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">edit</span> Edit</button>
+<button class="text-xs font-bold text-red-500 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">delete</span> Delete</button>
+</div>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-border-light flex items-start gap-4 shadow-sm">
+<div class="bg-primary/20 text-neutral-dark size-8 rounded-lg flex items-center justify-center shrink-0">
+<span class="font-bold text-xs">Q2</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold">¿En qué calle vivió durante su infancia?</p>
+<div class="flex gap-4 mt-2">
+<button class="text-xs font-bold text-neutral-gray flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">edit</span> Edit</button>
+<button class="text-xs font-bold text-red-500 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">delete</span> Delete</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- User Database Card View -->
+<section class="p-4">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined">database</span>
+                    User Database
+                </h3>
+<button class="text-sm font-bold text-neutral-gray border border-border-light px-3 py-1 rounded-lg bg-white flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">filter_list</span> Filter
+                </button>
+</div>
+<div class="bg-white rounded-xl border border-border-light overflow-hidden shadow-sm">
+<div class="p-3 bg-background-light/50 border-b border-border-light">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-neutral-gray text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 text-sm border-border-light rounded-lg focus:ring-primary focus:border-primary" placeholder="Search by name or email..." type="text"/>
+</div>
+</div>
+<div class="divide-y divide-border-light">
+<div class="p-4 flex items-center gap-3">
+<div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-neutral-dark font-bold text-xs">JA</div>
+<div class="flex-1">
+<p class="font-semibold text-sm">Juan Alvarado</p>
+<p class="text-xs text-neutral-gray">juan.alvarado@email.com</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold">Connected</p>
+<p class="text-[10px] text-neutral-gray">15m ago</p>
+</div>
+</div>
+<div class="p-4 flex items-center gap-3">
+<div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-neutral-dark font-bold text-xs">MG</div>
+<div class="flex-1">
+<p class="font-semibold text-sm">Maria Garcia</p>
+<p class="text-xs text-neutral-gray">m.garcia_01@email.com</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold">Connected</p>
+<p class="text-[10px] text-neutral-gray">1h 20m ago</p>
+</div>
+</div>
+<div class="p-4 flex items-center gap-3 bg-background-light/30">
+<div class="size-10 bg-neutral-gray/10 rounded-full flex items-center justify-center text-neutral-gray font-bold text-xs">RB</div>
+<div class="flex-1">
+<p class="font-semibold text-sm">Ricardo Blanco</p>
+<p class="text-xs text-neutral-gray">rblanco@gmail.com</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-neutral-gray">Offline</p>
+<p class="text-[10px] text-neutral-gray">2d ago</p>
+</div>
+</div>
+</div>
+<button class="w-full py-3 text-sm font-bold text-neutral-gray border-t border-border-light hover:bg-background-light">View all 14,000 users</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-lg border-t border-border-light px-2 pb-6 pt-2 flex justify-around items-end z-20">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="size-10 flex items-center justify-center rounded-xl bg-primary text-neutral-dark">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+</div>
+<span class="text-[10px] font-bold text-neutral-dark">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="size-10 flex items-center justify-center rounded-xl text-neutral-gray group-hover:bg-primary/20">
+<span class="material-symbols-outlined">map</span>
+</div>
+<span class="text-[10px] font-medium text-neutral-gray">Sectors</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="size-10 flex items-center justify-center rounded-xl text-neutral-gray group-hover:bg-primary/20">
+<span class="material-symbols-outlined">database</span>
+</div>
+<span class="text-[10px] font-medium text-neutral-gray">Database</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="size-10 flex items-center justify-center rounded-xl text-neutral-gray group-hover:bg-primary/20">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<span class="text-[10px] font-medium text-neutral-gray">Settings</span>
+</a>
+</nav>
+</body></html>

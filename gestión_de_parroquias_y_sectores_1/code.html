@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Parroquias y Sectores - Mérida Conecta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fdd13f",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#231e0f",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .ios-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#1c190c] dark:text-[#f4f1e6] min-h-screen flex flex-col">
+<!-- Header / Navigation Bar (iOS Style) -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur border-b border-[#f4f1e6] dark:border-[#3a3420] px-4 pt-10 pb-4">
+<div class="flex items-center justify-between mb-2">
+<button class="flex items-center text-[#a08b46] font-medium">
+<span class="material-symbols-outlined">chevron_left</span>
+<span>Mérida</span>
+</button>
+<button class="p-2 bg-primary rounded-full text-black shadow-sm">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+<div>
+<h1 class="text-3xl font-bold tracking-tight">Spinetti Dini</h1>
+<p class="text-sm text-[#a08b46] font-medium">Municipio Libertador • Mérida</p>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto">
+<!-- Quick Stats Summary -->
+<div class="flex gap-3 p-4 overflow-x-auto no-scrollbar">
+<div class="min-w-[140px] flex-1 flex flex-col gap-1 rounded-xl p-4 bg-white dark:bg-[#2d2714] border border-[#f4f1e6] dark:border-[#3a3420] shadow-sm">
+<p class="text-[#a08b46] text-xs font-semibold uppercase tracking-wider">Nodos Total</p>
+<p class="text-2xl font-bold leading-tight">128</p>
+<div class="flex items-center gap-1 text-[#078812] text-xs font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+5%</span>
+</div>
+</div>
+<div class="min-w-[140px] flex-1 flex flex-col gap-1 rounded-xl p-4 bg-white dark:bg-[#2d2714] border border-[#f4f1e6] dark:border-[#3a3420] shadow-sm">
+<p class="text-[#a08b46] text-xs font-semibold uppercase tracking-wider">En Línea</p>
+<p class="text-2xl font-bold leading-tight text-[#078812]">114</p>
+<p class="text-xs text-gray-500 font-medium">89% Capacidad</p>
+</div>
+<div class="min-w-[140px] flex-1 flex flex-col gap-1 rounded-xl p-4 bg-white dark:bg-[#2d2714] border border-[#f4f1e6] dark:border-[#3a3420] shadow-sm">
+<p class="text-[#a08b46] text-xs font-semibold uppercase tracking-wider">Mantenimiento</p>
+<p class="text-2xl font-bold leading-tight text-[#e71408]">14</p>
+<div class="flex items-center gap-1 text-[#e71408] text-xs font-bold">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span>Crítico</span>
+</div>
+</div>
+</div>
+<!-- Management Actions Bar -->
+<div class="px-4 py-2 flex items-center justify-between gap-3">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-white dark:bg-[#2d2714] border border-[#f4f1e6] dark:border-[#3a3420] rounded-lg text-sm focus:ring-primary focus:border-primary outline-none" placeholder="Buscar sector o calle..." type="text"/>
+</div>
+<button class="flex items-center gap-2 bg-primary px-4 py-2 rounded-lg text-black font-bold text-sm shadow-sm hover:brightness-95 transition-all">
+<span class="material-symbols-outlined text-lg">edit_document</span>
+                Bulk Edit
+            </button>
+</div>
+<!-- Sectors List Hierarchy -->
+<section class="p-4 space-y-4">
+<h2 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">layers</span>
+                Sectores (12)
+            </h2>
+<!-- Sector Card 1 -->
+<div class="bg-white dark:bg-[#2d2714] rounded-xl border border-[#f4f1e6] dark:border-[#3a3420] shadow-sm overflow-hidden">
+<div class="p-4 flex items-start justify-between border-b border-[#f4f1e6] dark:border-[#3a3420]">
+<div>
+<h3 class="font-bold text-base">Santa Anita</h3>
+<p class="text-xs text-[#a08b46] font-medium">18 Nodos Activos • 2 En espera</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-[#a08b46] hover:bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+<button class="p-2 text-[#a08b46] hover:bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</div>
+</div>
+<div class="p-4 bg-background-light/50 dark:bg-background-dark/30 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-gray-400">route</span>
+<span class="text-sm font-medium">Calle Principal</span>
+</div>
+<span class="bg-primary/20 text-[#a08b46] text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">8 Nodos</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-gray-400">route</span>
+<span class="text-sm font-medium">Av. Universidad</span>
+</div>
+<span class="bg-primary/20 text-[#a08b46] text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">12 Nodos</span>
+</div>
+</div>
+<button class="w-full py-3 text-sm font-bold text-[#a08b46] flex items-center justify-center gap-1 hover:bg-primary/5">
+<span class="material-symbols-outlined text-lg">visibility</span>
+                    Ver todos los nodos
+                </button>
+</div>
+<!-- Sector Card 2 (Alert State) -->
+<div class="bg-white dark:bg-[#2d2714] rounded-xl border-l-4 border-l-[#e71408] border border-[#f4f1e6] dark:border-[#3a3420] shadow-sm overflow-hidden">
+<div class="p-4 flex items-start justify-between border-b border-[#f4f1e6] dark:border-[#3a3420]">
+<div>
+<h3 class="font-bold text-base">Los Chorros</h3>
+<p class="text-xs text-[#e71408] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">error</span>
+                            5 Nodos Desconectados
+                        </p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-[#a08b46] hover:bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+</div>
+</div>
+<div class="p-4 bg-[#e71408]/5 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-gray-400">route</span>
+<span class="text-sm font-medium">Final Calle 3</span>
+</div>
+<span class="bg-[#e71408]/20 text-[#e71408] text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Mantenimiento</span>
+</div>
+</div>
+</div>
+<!-- Sector Card 3 -->
+<div class="bg-white dark:bg-[#2d2714] rounded-xl border border-[#f4f1e6] dark:border-[#3a3420] shadow-sm overflow-hidden">
+<div class="p-4 flex items-start justify-between border-b border-[#f4f1e6] dark:border-[#3a3420]">
+<div>
+<h3 class="font-bold text-base">Milagro Bajo</h3>
+<p class="text-xs text-[#a08b46] font-medium">32 Nodos Activos • Operación Normal</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-[#a08b46] hover:bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer for FAB -->
+<div class="h-20"></div>
+</main>
+<!-- Floating Action Button (iOS Pattern) -->
+<div class="fixed bottom-24 right-6 z-40">
+<button class="flex items-center gap-2 bg-primary text-black px-6 py-4 rounded-full font-bold shadow-xl active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add_location_alt</span>
+<span>Nuevo Sector</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full bg-background-light/95 dark:bg-background-dark/95 ios-blur border-t border-[#f4f1e6] dark:border-[#3a3420] px-6 pb-6 pt-3 z-50">
+<div class="flex items-center justify-between">
+<a class="flex flex-col items-center gap-1 text-[#a08b46]" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Inicio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#1c190c] dark:text-[#fdd13f]" href="#">
+<span class="material-symbols-outlined font-bold" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Sectores</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#a08b46]" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Mapa</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#a08b46]" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Ajustes</span>
+</a>
+</div>
+</nav>
+<!-- Bulk Edit Modal Overlay (Conceptual Placeholder) -->
+<!-- This would normally be triggered via JS, showing it as a design element here -->
+<div class="hidden fixed inset-0 bg-black/40 z-[60] flex items-end">
+<div class="w-full bg-white dark:bg-background-dark rounded-t-2xl p-6 shadow-2xl">
+<div class="w-12 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mb-6"></div>
+<h3 class="text-xl font-bold mb-4">Edición Masiva</h3>
+<div class="space-y-4 mb-8">
+<div class="flex items-center justify-between p-4 bg-background-light dark:bg-[#2d2714] rounded-lg">
+<span class="font-medium">Cambiar SSID</span>
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-background-light dark:bg-[#2d2714] rounded-lg">
+<span class="font-medium">Actualizar Firmware</span>
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-background-light dark:bg-[#2d2714] rounded-lg">
+<span class="font-medium">Limitar Ancho de Banda</span>
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+</div>
+<button class="w-full bg-primary text-black font-bold py-4 rounded-xl">Cancelar</button>
+</div>
+</div>
+</body></html>

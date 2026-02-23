@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Contenido - Mérida Wi-Fi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fdd13f",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#231e0f",
+                        "neutral-dark": "#1e1e1e",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .preview-pane {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-neutral-dark min-h-screen flex flex-col font-display">
+<!-- Header Section -->
+<header class="bg-neutral-dark text-white px-4 pt-12 pb-6 sticky top-0 z-50">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">wifi</span>
+<h1 class="text-xl font-bold tracking-tight uppercase">Mérida Wi-Fi</h1>
+</div>
+<button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white">person</span>
+</button>
+</div>
+<p class="text-white/60 text-sm font-medium">Gestión de Contenido e Interacciones</p>
+</header>
+<main class="flex-1 px-4 py-6 space-y-8 overflow-y-auto pb-24">
+<!-- Section: Preguntas Aleatorias -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">quiz</span>
+<h2 class="text-lg font-bold">Redacción de Pregunta Aleatoria</h2>
+</div>
+<div class="bg-white p-4 rounded-xl ios-shadow space-y-4 border border-primary/10">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-neutral-dark/70">Nueva Pregunta</label>
+<div class="flex gap-2">
+<input class="flex-1 border border-neutral-200 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="¿Qué quieres preguntar hoy?" type="text"/>
+<button class="bg-primary hover:bg-primary/90 text-neutral-dark px-4 py-3 rounded-lg font-bold text-sm flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<div class="space-y-2">
+<p class="text-xs font-bold text-neutral-dark/40 uppercase tracking-widest px-1">Preguntas Activas</p>
+<!-- Question Item -->
+<div class="flex items-center justify-between p-3 bg-background-light rounded-lg border border-neutral-100">
+<p class="text-sm font-medium">¿Cómo calificaría su experiencia de hoy?</p>
+<div class="flex gap-1">
+<button class="p-2 text-neutral-dark/40 hover:text-neutral-dark transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-2 text-red-400 hover:text-red-600 transition-colors"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</div>
+<!-- Question Item -->
+<div class="flex items-center justify-between p-3 bg-background-light rounded-lg border border-neutral-100">
+<p class="text-sm font-medium">¿Es esta su primera vez en Mérida?</p>
+<div class="flex gap-1">
+<button class="p-2 text-neutral-dark/40 hover:text-neutral-dark transition-colors"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-2 text-red-400 hover:text-red-600 transition-colors"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Configuración de Pop-up -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">notification_important</span>
+<h2 class="text-lg font-bold">Configuración de Pop-up</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Editor Left -->
+<div class="bg-white p-4 rounded-xl ios-shadow space-y-4 border border-primary/10">
+<div class="space-y-4">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-neutral-dark/70">Título del Mensaje</label>
+<input class="w-full border border-neutral-200 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none" type="text" value="Consentimiento de Datos"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-neutral-dark/70">Cuerpo del Mensaje</label>
+<textarea class="w-full border border-neutral-200 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none" rows="4">Al continuar, aceptas que Mérida Wi-Fi procese tus datos para mejorar la calidad del servicio público.</textarea>
+</div>
+</div>
+</div>
+<!-- Preview Right -->
+<div class="preview-pane p-6 rounded-xl border border-neutral-200 flex flex-col items-center justify-center relative min-h-[300px]">
+<p class="absolute top-3 left-3 text-[10px] font-bold text-neutral-dark/30 uppercase tracking-tighter">Vista Previa en Vivo</p>
+<!-- iOS Style Alert Mockup -->
+<div class="bg-white/80 backdrop-blur-md w-full max-w-[240px] rounded-[14px] overflow-hidden flex flex-col ios-shadow border border-white">
+<div class="p-4 text-center">
+<h3 class="font-bold text-base leading-tight mb-1">Consentimiento de Datos</h3>
+<p class="text-xs text-neutral-dark/80 leading-snug">Al continuar, aceptas que Mérida Wi-Fi procese tus datos para mejorar la calidad del servicio público.</p>
+</div>
+<div class="border-t border-neutral-300 grid grid-cols-1">
+<button class="py-3 text-sm font-semibold text-blue-600 hover:bg-neutral-100 transition-colors">Aceptar</button>
+</div>
+</div>
+<!-- Phone Frame Mockup Hint -->
+<div class="mt-4 flex gap-1 items-center opacity-30">
+<span class="material-symbols-outlined text-xs">smartphone</span>
+<span class="text-[10px] font-medium italic">Simulación de pantalla de usuario</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar Component -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-neutral-100 px-6 py-2 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-neutral-dark/40" href="#">
+<span class="material-symbols-outlined">ads_click</span>
+<span class="text-[10px] font-bold">Interacciones</span>
+</a>
+<button class="bg-primary w-14 h-14 rounded-full flex items-center justify-center -mt-10 ios-shadow border-4 border-background-light">
+<span class="material-symbols-outlined text-neutral-dark font-bold">save</span>
+</button>
+<a class="flex flex-col items-center gap-1 text-neutral-dark/40" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="text-[10px] font-bold">Analíticas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-neutral-dark/40" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Ajustes</span>
+</a>
+</nav>
+<!-- Floating Toast for Save (Visual Indicator) -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-neutral-dark text-white px-6 py-3 rounded-full ios-shadow text-xs font-bold flex items-center gap-2 opacity-0 pointer-events-none transition-opacity">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+        Cambios guardados con éxito
+    </div>
+</body></html>

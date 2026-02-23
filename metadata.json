@@ -1,0 +1,5 @@
+{
+  "name": "Mérida Conecta",
+  "description": "Panel administrativo y portal de conexión para la red Wi-Fi pública de Mérida.",
+  "requestFramePermissions": []
+}

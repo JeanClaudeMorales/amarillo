@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Configuración del Sistema - Mérida Conecta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fdd13f",
+                        "background-light": "#F2F2F7",
+                        "neutral-dark": "#1e1e1e",
+                        "neutral-gray": "#8E8E93",
+                        "border-light": "#E5E5EA",
+                        "ios-blue": "#007AFF",
+                        "ios-red": "#FF3B30",
+                        "ios-green": "#34C759"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body { font-family: 'Public Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .toggle-checkbox:checked { @apply right-0 border-ios-green; }
+        .toggle-checkbox:checked + .toggle-label { @apply bg-ios-green; }
+        .ios-list-item:last-child { border-bottom: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light text-neutral-dark min-h-screen pb-32">
+<header class="px-5 pt-12 pb-4">
+<h1 class="text-3xl font-bold tracking-tight">Configuración</h1>
+</header>
+<main class="space-y-8 px-4">
+<section>
+<h2 class="text-[13px] uppercase text-neutral-gray px-4 mb-2 font-medium tracking-wide">Perfil del Administrador</h2>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm">
+<div class="ios-list-item flex items-center justify-between p-4 border-b border-border-light active:bg-gray-100 transition-colors">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full overflow-hidden">
+<img alt="Admin" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1lF5oMH7_z8L4egsFH55KhaUQ9ZRsUvd0rcEX_SeKx54PwZCRRK5dnBk7yqdIxYzZzKXhsAoFm658X1lRCFAz7H038U6ZEPcHYjLXoO3HRYLGZWT6erSZKbM0PU6lnuXkDt3EPlnHIl9XI-dPk06w_oJly-f86ds5VLAvl-4iDh1NVVg6m7IYuGrpLf5s6dV3yhkmdqZ7RHjJMhbQkpf-fdKNtYqTW7PbXsXbV62zWK6KZUVdjHIUxuxijiDguqEplvVYZRpSRwgk"/>
+</div>
+<div>
+<p class="font-semibold text-base">Juan Alvarado</p>
+<p class="text-xs text-neutral-gray">ID de Administrador: 00482</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-border-light">chevron_right</span>
+</div>
+<div class="ios-list-item flex items-center justify-between p-4 active:bg-gray-100 transition-colors">
+<div class="flex items-center gap-3">
+<div class="bg-ios-blue size-8 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<span class="text-[16px]">Información Personal</span>
+</div>
+<span class="material-symbols-outlined text-border-light">chevron_right</span>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-[13px] uppercase text-neutral-gray px-4 mb-2 font-medium tracking-wide">Seguridad y API Keys</h2>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm">
+<div class="ios-list-item flex items-center justify-between p-4 border-b border-border-light active:bg-gray-100 transition-colors">
+<div class="flex items-center gap-3">
+<div class="bg-neutral-dark size-8 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">key</span>
+</div>
+<span class="text-[16px]">Gestionar API Keys</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[15px] text-neutral-gray">3 Activas</span>
+<span class="material-symbols-outlined text-border-light">chevron_right</span>
+</div>
+</div>
+<div class="ios-list-item flex items-center justify-between p-4 border-b border-border-light active:bg-gray-100 transition-colors">
+<div class="flex items-center gap-3">
+<div class="bg-primary size-8 rounded-lg flex items-center justify-center text-neutral-dark">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<span class="text-[16px]">Autenticación 2FA</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-gray-300 right-6 checked:right-0 checked:border-ios-green" id="toggle2fa" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer transition-colors duration-200" for="toggle2fa"></label>
+</div>
+</div>
+<div class="ios-list-item flex items-center justify-between p-4 active:bg-gray-100 transition-colors">
+<div class="flex items-center gap-3">
+<div class="bg-gray-400 size-8 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">history</span>
+</div>
+<span class="text-[16px]">Registro de Accesos</span>
+</div>
+<span class="material-symbols-outlined text-border-light">chevron_right</span>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-[13px] uppercase text-neutral-gray px-4 mb-2 font-medium tracking-wide">Notificaciones</h2>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm">
+<div class="ios-list-item flex items-center justify-between p-4 border-b border-border-light active:bg-gray-100 transition-colors">
+<div class="flex items-center gap-3">
+<div class="bg-ios-red size-8 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</div>
+<span class="text-[16px]">Alertas del Sistema</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-gray-300 right-6 checked:right-0 checked:border-ios-green" id="toggleAlerts" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer transition-colors duration-200" for="toggleAlerts"></label>
+</div>
+</div>
+<div class="ios-list-item flex items-center justify-between p-4 active:bg-gray-100 transition-colors">
+<div class="flex items-center gap-3">
+<div class="bg-ios-green size-8 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<span class="text-[16px]">Reportes por Correo</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-gray-300 right-6 checked:right-0 checked:border-ios-green" id="toggleReports" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer transition-colors duration-200" for="toggleReports"></label>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-[13px] uppercase text-neutral-gray px-4 mb-2 font-medium tracking-wide">Apariencia del Portal</h2>
+<div class="bg-white rounded-xl overflow-hidden shadow-sm">
+<div class="ios-list-item flex items-center justify-between p-4 border-b border-border-light active:bg-gray-100 transition-colors">
+<div class="flex items-center gap-3">
+<div class="bg-indigo-500 size-8 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">palette</span>
+</div>
+<span class="text-[16px]">Temas y Colores</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[15px] text-neutral-gray">Light</span>
+<span class="material-symbols-outlined text-border-light">chevron_right</span>
+</div>
+</div>
+<div class="ios-list-item flex items-center justify-between p-4 active:bg-gray-100 transition-colors">
+<div class="flex items-center gap-3">
+<div class="bg-pink-500 size-8 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">branding_watermark</span>
+</div>
+<span class="text-[16px]">Logo y Branding</span>
+</div>
+<span class="material-symbols-outlined text-border-light">chevron_right</span>
+</div>
+</div>
+</section>
+<section class="pt-4">
+<div class="bg-white rounded-xl overflow-hidden shadow-sm">
+<button class="w-full text-center py-4 text-ios-red font-semibold text-[17px] active:bg-red-50 transition-colors">
+                    Cerrar Sesión
+                </button>
+</div>
+<p class="text-center text-[11px] text-neutral-gray mt-6 uppercase tracking-widest font-medium">Versión del Sistema 2.4.1 (Build 120)</p>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-lg border-t border-border-light px-2 pb-8 pt-2 flex justify-around items-end z-20">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="size-10 flex items-center justify-center rounded-xl text-neutral-gray">
+<span class="material-symbols-outlined">dashboard</span>
+</div>
+<span class="text-[10px] font-medium text-neutral-gray">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="size-10 flex items-center justify-center rounded-xl text-neutral-gray">
+<span class="material-symbols-outlined">map</span>
+</div>
+<span class="text-[10px] font-medium text-neutral-gray">Sectores</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="size-10 flex items-center justify-center rounded-xl text-neutral-gray">
+<span class="material-symbols-outlined">database</span>
+</div>
+<span class="text-[10px] font-medium text-neutral-gray">Database</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="size-10 flex items-center justify-center rounded-xl bg-primary text-neutral-dark">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+</div>
+<span class="text-[10px] font-bold text-neutral-dark">Ajustes</span>
+</a>
+</nav>
+
+</body></html>

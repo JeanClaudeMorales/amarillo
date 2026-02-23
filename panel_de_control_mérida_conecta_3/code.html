@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login Administrador Mérida</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FDD041",
+                        "neutral-dark": "#1E1E1E",
+                        "neutral-gray": "#717171",
+                        "border-light": "#E5E5E5"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "squircle": "24px"
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }.squircle {
+            border-radius: 24px;
+            @supports (mask-image: paint(squircle)) {
+                border-radius: 0;
+                mask-image: paint(squircle);
+                --squircle-radius: 24px;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-white min-h-screen flex flex-col items-center justify-center p-6">
+<div class="flex flex-col items-center mb-10">
+<div class="w-20 h-20 bg-primary squircle flex items-center justify-center shadow-sm mb-6">
+<span class="material-symbols-outlined text-neutral-dark text-5xl">wifi</span>
+</div>
+<h1 class="text-2xl font-bold text-neutral-dark tracking-tight">Mérida Conecta</h1>
+<p class="text-sm text-neutral-gray mt-1 font-medium">Panel de Administración</p>
+</div>
+<form class="w-full max-w-sm space-y-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-neutral-gray text-xl">person</span>
+<input class="w-full bg-white border border-border-light rounded-2xl py-4 pl-12 pr-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-neutral-gray/60" placeholder="Usuario" type="text"/>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-neutral-gray text-xl">lock</span>
+<input class="w-full bg-white border border-border-light rounded-2xl py-4 pl-12 pr-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-neutral-gray/60" placeholder="Contraseña" type="password"/>
+</div>
+<div class="pt-2">
+<button class="w-full bg-neutral-dark text-white font-semibold py-4 rounded-full active:scale-[0.98] transition-transform shadow-lg shadow-black/5" type="submit">
+                Iniciar Sesión
+            </button>
+</div>
+</form>
+<div class="mt-8">
+<a class="text-xs font-semibold text-neutral-gray hover:text-neutral-dark transition-colors" href="#">
+            Recuperar contraseña
+        </a>
+</div>
+
+</body></html>

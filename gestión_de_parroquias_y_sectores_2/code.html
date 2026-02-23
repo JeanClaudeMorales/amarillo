@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Desglose de Municipios Mérida - Mérida Conecta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FDD041",
+                        "ios-bg": "#F2F2F7",
+                        "ios-card": "#FFFFFF",
+                        "ios-text": "#000000",
+                        "ios-secondary": "#8E8E93",
+                        "ios-success": "#34C759",
+                        "ios-error": "#FF3B30",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-ios-bg text-ios-text antialiased; }
+        }
+        .ios-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .ios-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="dark:bg-[#1C1C1E] dark:text-white">
+<header class="sticky top-0 z-50 bg-ios-bg/80 dark:bg-[#1C1C1E]/80 ios-blur border-b border-gray-200 dark:border-gray-800 px-4 pt-12 pb-4">
+<div class="flex items-center justify-between mb-4">
+<button class="flex items-center text-primary font-semibold">
+<span class="material-symbols-outlined font-bold">chevron_left</span>
+<span>Región Andina</span>
+</button>
+<div class="flex gap-4">
+<button class="text-primary"><span class="material-symbols-outlined">search</span></button>
+<button class="text-primary"><span class="material-symbols-outlined">filter_list</span></button>
+</div>
+</div>
+<h1 class="text-3xl font-extrabold tracking-tight">Municipios</h1>
+<p class="text-ios-secondary text-sm font-medium">Estado Mérida • 23 Entidades</p>
+</header>
+<main class="p-4 space-y-6">
+<div class="flex gap-3 overflow-x-auto no-scrollbar py-1">
+<div class="bg-ios-card dark:bg-[#2C2C2E] p-4 rounded-2xl shadow-sm min-w-[140px] flex-1 border border-gray-100 dark:border-gray-800">
+<span class="material-symbols-outlined text-primary mb-2">location_city</span>
+<p class="text-[10px] uppercase font-bold tracking-wider text-ios-secondary">Activos</p>
+<p class="text-2xl font-bold">21</p>
+</div>
+<div class="bg-ios-card dark:bg-[#2C2C2E] p-4 rounded-2xl shadow-sm min-w-[140px] flex-1 border border-gray-100 dark:border-gray-800">
+<span class="material-symbols-outlined text-primary mb-2">router</span>
+<p class="text-[10px] uppercase font-bold tracking-wider text-ios-secondary">Puntos</p>
+<p class="text-2xl font-bold">1,402</p>
+</div>
+<div class="bg-ios-card dark:bg-[#2C2C2E] p-4 rounded-2xl shadow-sm min-w-[140px] flex-1 border border-gray-100 dark:border-gray-800">
+<span class="material-symbols-outlined text-ios-error mb-2">engineering</span>
+<p class="text-[10px] uppercase font-bold tracking-wider text-ios-secondary">Alerta</p>
+<p class="text-2xl font-bold">3</p>
+</div>
+</div>
+<div class="ios-grid">
+<div class="bg-ios-card dark:bg-[#2C2C2E] p-4 rounded-2xl shadow-sm border-2 border-primary relative overflow-hidden flex flex-col justify-between aspect-square">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-xl">domain</span>
+<span class="bg-ios-success text-white text-[10px] px-2 py-0.5 rounded-full font-bold">Ok</span>
+</div>
+<div>
+<h3 class="font-bold text-lg leading-tight mb-1">Libertador</h3>
+<div class="flex flex-col text-[11px] text-ios-secondary font-medium">
+<span>15 Parroquias</span>
+<span>482 Puntos</span>
+</div>
+</div>
+<div class="absolute -right-2 -bottom-2 opacity-10">
+<span class="material-symbols-outlined text-7xl">map</span>
+</div>
+</div>
+<div class="bg-ios-card dark:bg-[#2C2C2E] p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col justify-between aspect-square">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-xl">domain</span>
+<span class="bg-ios-success text-white text-[10px] px-2 py-0.5 rounded-full font-bold">Ok</span>
+</div>
+<div>
+<h3 class="font-bold text-lg leading-tight mb-1">A. Adriani</h3>
+<div class="flex flex-col text-[11px] text-ios-secondary font-medium">
+<span>7 Parroquias</span>
+<span>215 Puntos</span>
+</div>
+</div>
+</div>
+<div class="bg-ios-card dark:bg-[#2C2C2E] p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col justify-between aspect-square">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-xl">domain</span>
+<span class="bg-ios-secondary text-white text-[10px] px-2 py-0.5 rounded-full font-bold">Maint</span>
+</div>
+<div>
+<h3 class="font-bold text-lg leading-tight mb-1">Tovar</h3>
+<div class="flex flex-col text-[11px] text-ios-secondary font-medium">
+<span>4 Parroquias</span>
+<span>128 Puntos</span>
+</div>
+</div>
+</div>
+<div class="bg-ios-card dark:bg-[#2C2C2E] p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col justify-between aspect-square">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-xl">domain</span>
+<span class="bg-ios-success text-white text-[10px] px-2 py-0.5 rounded-full font-bold">Ok</span>
+</div>
+<div>
+<h3 class="font-bold text-lg leading-tight mb-1">C. Elías</h3>
+<div class="flex flex-col text-[11px] text-ios-secondary font-medium">
+<span>7 Parroquias</span>
+<span>184 Puntos</span>
+</div>
+</div>
+</div>
+<div class="bg-ios-card dark:bg-[#2C2C2E] p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col justify-between aspect-square">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-xl">domain</span>
+<span class="bg-ios-error text-white text-[10px] px-2 py-0.5 rounded-full font-bold">Alert</span>
+</div>
+<div>
+<h3 class="font-bold text-lg leading-tight mb-1">Rangel</h3>
+<div class="flex flex-col text-[11px] text-ios-secondary font-medium">
+<span>5 Parroquias</span>
+<span>94 Puntos</span>
+</div>
+</div>
+</div>
+<div class="bg-ios-card dark:bg-[#2C2C2E] p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col justify-between aspect-square">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-xl">domain</span>
+<span class="bg-ios-success text-white text-[10px] px-2 py-0.5 rounded-full font-bold">Ok</span>
+</div>
+<div>
+<h3 class="font-bold text-lg leading-tight mb-1">Sucre</h3>
+<div class="flex flex-col text-[11px] text-ios-secondary font-medium">
+<span>6 Parroquias</span>
+<span>112 Puntos</span>
+</div>
+</div>
+</div>
+</div>
+<section class="mt-8">
+<div class="flex items-center justify-between mb-4 px-1">
+<h2 class="text-xl font-bold">Parroquias: Libertador</h2>
+<button class="text-primary text-sm font-semibold">Ver Todo</button>
+</div>
+<div class="space-y-3">
+<div class="bg-ios-card dark:bg-[#2C2C2E] p-4 rounded-2xl flex items-center justify-between shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="w-2 h-10 bg-ios-success rounded-full"></div>
+<div>
+<h4 class="font-bold">Spinetti Dini</h4>
+<p class="text-xs text-ios-secondary">128 Nodos • 14 Mantenimiento</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-ios-secondary">chevron_right</span>
+</div>
+<div class="bg-ios-card dark:bg-[#2C2C2E] p-4 rounded-2xl flex items-center justify-between shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="w-2 h-10 bg-ios-success rounded-full"></div>
+<div>
+<h4 class="font-bold">El Llano</h4>
+<p class="text-xs text-ios-secondary">84 Nodos • 2 Mantenimiento</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-ios-secondary">chevron_right</span>
+</div>
+<div class="bg-ios-card dark:bg-[#2C2C2E] p-4 rounded-2xl flex items-center justify-between shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="w-2 h-10 bg-ios-error rounded-full"></div>
+<div>
+<h4 class="font-bold">Milla</h4>
+<p class="text-xs text-ios-secondary">62 Nodos • 15 Desconectados</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-ios-secondary">chevron_right</span>
+</div>
+</div>
+</section>
+<div class="h-24"></div>
+</main>
+<button class="fixed bottom-24 right-6 bg-primary text-black w-14 h-14 rounded-full shadow-2xl flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined font-bold">add</span>
+</button>
+<nav class="fixed bottom-0 w-full bg-ios-bg/95 dark:bg-[#1C1C1E]/95 ios-blur border-t border-gray-200 dark:border-gray-800 px-8 pb-8 pt-3 z-50">
+<div class="flex items-center justify-between max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-ios-secondary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Panel</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="text-[10px] font-bold">Municipios</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-ios-secondary" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-[10px] font-medium">Red</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-ios-secondary" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Ajustes</span>
+</a>
+</div>
+</nav>
+
+</body></html>

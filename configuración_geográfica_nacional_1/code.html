@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Configuración Regional: Mérida - Mérida Conecta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FDD041",
+                        "ios-bg": "#FFFFFF",
+                        "ios-text": "#1E1E1E",
+                        "ios-gray": "#8E8E93",
+                        "ios-light-gray": "#F2F2F7",
+                    },
+                    fontFamily: {
+                        "sans": ["Public Sans", "system-ui", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .ios-toggle:checked + .ios-toggle-label {
+                background-color: #34C759;
+            }
+            .ios-toggle:checked + .ios-toggle-label::after {
+                transform: translateX(1.25rem);
+            }
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        body {
+            background-color: #FFFFFF;
+            color: #1E1E1E;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased font-sans">
+<div class="relative flex min-h-screen w-full flex-col max-w-[480px] mx-auto bg-ios-bg shadow-2xl">
+<header class="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-gray-100 px-4 pt-6 pb-4">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-ios-text text-2xl">chevron_left</span>
+<h1 class="text-xl font-bold tracking-tight">Configuración Regional: Mérida</h1>
+</div>
+<button class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<nav class="flex items-center gap-1 overflow-x-auto no-scrollbar whitespace-nowrap py-1 mb-4 text-[13px] font-medium">
+<span class="text-ios-gray">Mérida</span>
+<span class="material-symbols-outlined text-[14px] text-ios-gray">chevron_right</span>
+<span class="text-ios-gray">Municipio</span>
+<span class="material-symbols-outlined text-[14px] text-ios-gray">chevron_right</span>
+<span class="text-ios-text">Parroquia</span>
+</nav>
+<button class="w-full bg-primary hover:bg-[#fcc71f] text-ios-text font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-sm">
+<span class="material-symbols-outlined font-bold">add_circle</span>
+<span>Nuevo Punto de Acceso</span>
+</button>
+</header>
+<main class="flex-1 px-4 py-6 space-y-4">
+<div class="relative mb-6">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-ios-gray">search</span>
+<input class="w-full bg-ios-light-gray border-none rounded-xl py-3 pl-10 pr-4 text-[15px] focus:ring-1 focus:ring-primary outline-none placeholder:text-ios-gray" placeholder="Buscar municipio..." type="text"/>
+</div>
+<div class="space-y-3">
+<div class="border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm">
+<div class="flex items-center justify-between p-4 bg-gray-50/50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-ios-gray">expand_more</span>
+<div>
+<h3 class="font-bold text-[17px]">Libertador</h3>
+<p class="text-xs text-ios-gray font-medium">15 Parroquias</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[11px] font-bold text-ios-gray uppercase tracking-wider">Wi-Fi</span>
+<div class="relative inline-block w-10 h-6">
+<input checked="" class="ios-toggle sr-only" id="muni-1" type="checkbox"/>
+<label class="ios-toggle-label block w-10 h-6 bg-gray-200 rounded-full cursor-pointer transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-transform after:duration-200" for="muni-1"></label>
+</div>
+</div>
+</div>
+<div class="divide-y divide-gray-50 bg-white">
+<div class="flex items-center justify-between py-3 px-6 pl-12">
+<span class="text-[15px] text-ios-text">Sagrario</span>
+<div class="relative inline-block w-10 h-6">
+<input checked="" class="ios-toggle sr-only" id="p-1" type="checkbox"/>
+<label class="ios-toggle-label block w-10 h-6 bg-gray-200 rounded-full cursor-pointer transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-transform after:duration-200" for="p-1"></label>
+</div>
+</div>
+<div class="flex items-center justify-between py-3 px-6 pl-12">
+<span class="text-[15px] text-ios-text">Milla</span>
+<div class="relative inline-block w-10 h-6">
+<input checked="" class="ios-toggle sr-only" id="p-2" type="checkbox"/>
+<label class="ios-toggle-label block w-10 h-6 bg-gray-200 rounded-full cursor-pointer transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-transform after:duration-200" for="p-2"></label>
+</div>
+</div>
+<div class="flex items-center justify-between py-3 px-6 pl-12">
+<span class="text-[15px] text-ios-text">Juan Rodríguez Suárez</span>
+<div class="relative inline-block w-10 h-6">
+<input class="ios-toggle sr-only" id="p-3" type="checkbox"/>
+<label class="ios-toggle-label block w-10 h-6 bg-gray-200 rounded-full cursor-pointer transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-transform after:duration-200" for="p-3"></label>
+</div>
+</div>
+</div>
+</div>
+<div class="border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm">
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-ios-gray">chevron_right</span>
+<div>
+<h3 class="font-bold text-[17px]">Alberto Adriani</h3>
+<p class="text-xs text-ios-gray font-medium">7 Parroquias</p>
+</div>
+</div>
+<div class="relative inline-block w-10 h-6">
+<input checked="" class="ios-toggle sr-only" id="muni-2" type="checkbox"/>
+<label class="ios-toggle-label block w-10 h-6 bg-gray-200 rounded-full cursor-pointer transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-transform after:duration-200" for="muni-2"></label>
+</div>
+</div>
+</div>
+<div class="border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm">
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-ios-gray">chevron_right</span>
+<div>
+<h3 class="font-bold text-[17px]">Tovar</h3>
+<p class="text-xs text-ios-gray font-medium">4 Parroquias</p>
+</div>
+</div>
+<div class="relative inline-block w-10 h-6">
+<input checked="" class="ios-toggle sr-only" id="muni-3" type="checkbox"/>
+<label class="ios-toggle-label block w-10 h-6 bg-gray-200 rounded-full cursor-pointer transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-transform after:duration-200" for="muni-3"></label>
+</div>
+</div>
+</div>
+<div class="border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm">
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-ios-gray">chevron_right</span>
+<div>
+<h3 class="font-bold text-[17px]">Campo Elías</h3>
+<p class="text-xs text-ios-gray font-medium">7 Parroquias</p>
+</div>
+</div>
+<div class="relative inline-block w-10 h-6">
+<input checked="" class="ios-toggle sr-only" id="muni-4" type="checkbox"/>
+<label class="ios-toggle-label block w-10 h-6 bg-gray-200 rounded-full cursor-pointer transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-transform after:duration-200" for="muni-4"></label>
+</div>
+</div>
+</div>
+<div class="border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm">
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-ios-gray">chevron_right</span>
+<div>
+<h3 class="font-bold text-[17px]">Sucre</h3>
+<p class="text-xs text-ios-gray font-medium">6 Parroquias</p>
+</div>
+</div>
+<div class="relative inline-block w-10 h-6">
+<input class="ios-toggle sr-only" id="muni-5" type="checkbox"/>
+<label class="ios-toggle-label block w-10 h-6 bg-gray-200 rounded-full cursor-pointer transition-colors duration-200 ease-in-out after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-transform after:duration-200" for="muni-5"></label>
+</div>
+</div>
+</div>
+<div class="py-4 text-center">
+<p class="text-ios-gray text-xs font-medium uppercase tracking-widest">Mostrando 5 de 23 Municipios</p>
+</div>
+</div>
+</main>
+<nav class="sticky bottom-0 z-40 w-full bg-white/90 backdrop-blur-xl border-t border-gray-100 pb-8">
+<div class="flex items-center justify-around h-14">
+<a class="flex flex-col items-center justify-center text-ios-gray" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-semibold mt-0.5">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-ios-text" href="#">
+<span class="material-symbols-outlined fill-1 text-primary">map</span>
+<span class="text-[10px] font-bold mt-0.5">Geografía</span>
+</a>
+<a class="flex flex-col items-center justify-center text-ios-gray" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-semibold mt-0.5">Métricas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-ios-gray" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-semibold mt-0.5">Ajustes</span>
+</a>
+</div>
+</nav>
+</div>
+
+</body></html>
