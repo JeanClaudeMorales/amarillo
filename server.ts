@@ -1,8 +1,12 @@
 import express from 'express';
 import crypto from 'crypto';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import 'dotenv/config';
 import { initializeSchema, query, queryOne, execute } from './db/database.js';
 import { seedDatabase } from './db/seed.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 app.use(express.json());
@@ -442,13 +446,26 @@ app.delete('/api/admins/:id', authMiddleware, superadminOnly, async (req: any, r
 });
 
 // ======================
+// STATIC FRONTEND (production)
+// ======================
+const distPath = path.join(__dirname, 'dist');
+try {
+    // Serve built Vite frontend if dist/ exists
+    app.use(express.static(distPath));
+    // SPA fallback — all non-API routes return index.html
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(distPath, 'index.html'));
+    });
+} catch (_) { /* dist/ not available in dev */ }
+
+// ======================
 // INIT & START
 // ======================
 async function main() {
     try {
         await initializeSchema();
         await seedDatabase();
-        app.listen(PORT, () => console.log(`🚀 API server running on http://localhost:${PORT}`));
+        app.listen(PORT, '0.0.0.0', () => console.log(`🚀 API server running on http://0.0.0.0:${PORT}`));
     } catch (err) {
         console.error('❌ Failed to start server:', err);
         process.exit(1);
