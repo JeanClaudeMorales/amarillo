@@ -131,9 +131,10 @@ export async function seedDatabase(): Promise<void> {
 
         // --- PARROQUIAS (Mérida - Municipio Libertador id=190 y otros) ---
         const parroquias = [
-            [190, 'El Sagrario'], [190, 'El Llano'], [190, 'Arias'], [190, 'Milla'],
-            [190, 'Ayacucho'], [190, 'Domingo Peña'], [190, 'El Marqués'], [190, 'Osuna Rodríguez'],
-            [190, 'Caracciolo Parra Pérez'], [190, 'Juan Rodríguez Suárez'],
+            [190, 'Antonio Spinetti Dini'], [190, 'Arias'], [190, 'Caracciolo Parra Pérez'], [190, 'Domingo Peña'],
+            [190, 'El Llano'], [190, 'Gonzalo Picón Febres'], [190, 'Jacinto Plaza'], [190, 'Juan Rodríguez Suárez'],
+            [190, 'Lasso de la Vega'], [190, 'Mariano Picón Salas'], [190, 'Milla'], [190, 'Osuna Rodríguez'],
+            [190, 'Sagrario'], [190, 'El Morro'], [190, 'Los Nevados'],
             [184, 'La Punta'], [184, 'Montalbán'], [184, 'San Juan'],
             [179, 'El Vigía'], [179, 'Presidente Páez'],
             [197, 'Tabay'], [197, 'La Mucuy'],
