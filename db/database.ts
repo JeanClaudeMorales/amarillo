@@ -1,24 +1,40 @@
 import mysql from 'mysql2/promise';
 import 'dotenv/config';
 
-// Connection pool — shared across all requests
 let pool: mysql.Pool | null = null;
 
 export function getPool(): mysql.Pool {
   if (!pool) {
     pool = mysql.createPool({
-      host: process.env.DB_HOST || 'localhost',
+      host: process.env.DB_HOST || 'emily_mysql',
       port: parseInt(process.env.DB_PORT || '3306', 10),
-      user: process.env.DB_USER || 'mysql',
+      user: process.env.DB_USER || 'amarillo',
       password: process.env.DB_PASS || '12345678',
-      database: process.env.DB_NAME || 'emily',
+      database: process.env.DB_NAME || 'amarillo',
       waitForConnections: true,
       connectionLimit: 10,
       queueLimit: 0,
       timezone: '+00:00',
+      connectTimeout: 10000,
     });
   }
   return pool;
+}
+
+// Retry DB connection — MySQL container may start before app is ready
+export async function waitForDB(retries = 10, delayMs = 3000): Promise<void> {
+  for (let i = 1; i <= retries; i++) {
+    try {
+      const conn = await getPool().getConnection();
+      conn.release();
+      console.log('✅ MySQL connected');
+      return;
+    } catch (err: any) {
+      console.log(`⏳ Waiting for MySQL... attempt ${i}/${retries} (${err.code || err.message})`);
+      if (i === retries) throw err;
+      await new Promise(r => setTimeout(r, delayMs));
+    }
+  }
 }
 
 // Helper: run a query and return all rows
@@ -151,8 +167,8 @@ export async function initializeSchema(): Promise<void> {
       connected_at         DATETIME DEFAULT CURRENT_TIMESTAMP,
       last_seen            DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
       is_active            TINYINT(1) DEFAULT 1,
-      FOREIGN KEY (parroquia_id)    REFERENCES parroquias(id),
-      FOREIGN KEY (access_point_id) REFERENCES access_points(id),
+      FOREIGN KEY (parroquia_id)         REFERENCES parroquias(id),
+      FOREIGN KEY (access_point_id)      REFERENCES access_points(id),
       FOREIGN KEY (security_question_id) REFERENCES questions(id),
       INDEX idx_users_cedula    (cedula),
       INDEX idx_users_parroquia (parroquia_id),

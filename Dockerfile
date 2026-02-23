@@ -34,8 +34,8 @@ COPY server.ts ./
 COPY db/ ./db/
 COPY tsconfig.json ./
 
-# Expose the API port (default 3001, configurable via API_PORT env)
-EXPOSE 3001
+# Expose port 3000 (EasyPanel default — reads PORT env var)
+EXPOSE 3000
 
-# Start the API server (it will also serve dist/ as static files)
+# Start server (reads process.env.PORT injected by EasyPanel)
 CMD ["npx", "tsx", "server.ts"]

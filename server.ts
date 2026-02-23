@@ -3,7 +3,7 @@ import crypto from 'crypto';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import 'dotenv/config';
-import { initializeSchema, query, queryOne, execute } from './db/database.js';
+import { initializeSchema, query, queryOne, execute, waitForDB } from './db/database.js';
 import { seedDatabase } from './db/seed.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -11,7 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 app.use(express.json());
 
-const PORT = parseInt(process.env.API_PORT || '3001', 10);
+const PORT = parseInt(process.env.PORT || process.env.API_PORT || '3000', 10);
 export const PASSWORD_SALT = process.env.PASSWORD_SALT || 'amarillo_salt_2024';
 
 // CORS
@@ -463,6 +463,7 @@ try {
 // ======================
 async function main() {
     try {
+        await waitForDB();          // retry up to 10× before failing
         await initializeSchema();
         await seedDatabase();
         app.listen(PORT, '0.0.0.0', () => console.log(`🚀 API server running on http://0.0.0.0:${PORT}`));
